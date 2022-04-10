@@ -1,4 +1,5 @@
 const contentData = [{
+    ID: 1,
     LABEL: "Фермерские продукты",
     TITLE: "Еда намного вкуснее",
     IMAGE_URL: "./images/icons/eat.svg",
@@ -6,7 +7,7 @@ const contentData = [{
       "Домашняя колбаса из мяса, соли и специй и колбаса из магазина — два настолько разных продукта, что они даже не родственники",
     WARNING: false,
 },
-{
+{ID: 2,
     LABEL: "Магазинные продукты",
     TITLE: "Просроченные продукты",
     IMAGE_URL: "./images/icons/garbage.svg",
@@ -15,6 +16,7 @@ const contentData = [{
     WARNING: true,
     },
     {
+        ID: 3,
         LABEL: "Фермерские продукты",
         TITLE: "Натуральные продукты",
         IMAGE_URL: "./images/icons/sprout.svg",
@@ -23,6 +25,7 @@ const contentData = [{
         WARNING: false,
     },
     {
+        ID: 4,
         LABEL: "Магазинные продукты",
         TITLE: "Некачественное мясо",
         IMAGE_URL: "./images/icons/no-meat.svg",

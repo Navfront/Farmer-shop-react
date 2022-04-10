@@ -14,7 +14,7 @@ const Adventages = () => {
         </Heading>
         <ul className="adventages__list">
           {contentData.map((data) => {
-            return <AdventageCard contentData={data} />;
+            return <AdventageCard contentData={data} key={data.ID} />;
           })}
         </ul>
         <Button>Купить</Button>
