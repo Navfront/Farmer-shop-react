@@ -1,0 +1,22 @@
+.button {
+  box-sizing: border-box;
+  border: none;
+  padding: 16.5px 24px;
+  width: 260px;
+  color: var(--c-white);
+  background-color: var(--c-orange);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.5;
+  font-family: inherit;
+}
+
+.button:hover,
+.button:focus {
+  background-color: var(--c-red);
+  box-shadow: inset 0px 4px 0px rgba(0, 0, 0, 0.14);
+}
+
+.button:active {
+  background-color: var(--c-red);
+}

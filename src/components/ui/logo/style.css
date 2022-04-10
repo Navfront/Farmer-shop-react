@@ -1,0 +1,11 @@
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo__icon {
+  margin-right: 28px;
+}
+.logo__text {
+  color: var(--c-dark);
+  font-weight: 700;
+}

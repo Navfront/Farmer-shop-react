@@ -1,0 +1,40 @@
+#root {
+  display: contents;
+}
+
+.page {
+  --c-black: #000000;
+  --c-white: #ffffff;
+  --c-dark: #333333;
+  --c-grey: #f6f6f6;
+  --c-light-blue: #d8ecfe;
+  --c-light-green: #e1edce;
+  --c-green: #88aa4d;
+  --c-light-pink: #f8ddd7;
+  --c-red: #f75531;
+  --c-orange: #fc9b27;
+
+  height: 100%;
+}
+
+.page__body {
+  margin: 0;
+  font-family: "Inter", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.container {
+  width: 1100px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
