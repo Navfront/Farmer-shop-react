@@ -25,7 +25,7 @@ const AdventageCard = ({ contentData, className = "" }) => {
           height="56"
         />
         <div className="adventage-card__title-block">
-          <h2 className="visually-hidden">{contentData.TITLE}</h2>
+          <h3 className="visually-hidden">{contentData.TITLE}</h3>
           <TextBlock
             className={
               contentData.WARNING

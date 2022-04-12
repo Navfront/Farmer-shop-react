@@ -10,7 +10,7 @@ const Adventages = () => {
     return (
       <section className="adventages">
         <div className="container">
-          <Heading className="adventages__heading" level="1">
+          <Heading className="adventages__heading" level="2">
             Почему фермерские продукты лучше?
           </Heading>
           <ul className="adventages__list">
