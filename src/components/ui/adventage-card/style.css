@@ -1,11 +1,14 @@
 .adventage-card {
+  box-sizing: border-box;
   background-color: var(--c-light-green);
   padding: 22px 20px;
+  width: 100%;
+  min-height: 197px;
 }
 .adventage-card--warning {
   background-color: var(--c-light-pink);
 }
-.adventage-card__top {
+.adventage-card__header {
   display: flex;
 }
 .adventage-card__icon {

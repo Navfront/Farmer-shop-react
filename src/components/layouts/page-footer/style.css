@@ -1,4 +1,8 @@
 .page-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.page-footer__wrapper {
   display: flex;
   justify-content: space-between;
   padding: 18px 0;

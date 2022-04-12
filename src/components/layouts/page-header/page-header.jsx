@@ -6,9 +6,11 @@ import "./style.css";
 
 const PageHeader = () => {
   return (
-    <header className="page__header page-header container">
-      <Logo />
-      <Button>Купить</Button>
+    <header className="page__header page-header">
+      <div className="container page-header__wrapper">
+        <Logo />
+        <Button>Купить</Button>
+      </div>
     </header>
   );
 };

@@ -4,10 +4,12 @@ import "./style.css";
 
 const PageFooter = () => {
   return (
-    <footer className="page__footer page-footer container">
-      <Logo />
-      <div className="page-footer__copyright">
-        <span>Создано 2021</span>
+    <footer className="page__footer page-footer">
+      <div className="container page-footer__wrapper">
+        <Logo />
+        <div className="page-footer__copyright">
+          <span>Создано 2021</span>
+        </div>
       </div>
     </footer>
   );

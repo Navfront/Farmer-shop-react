@@ -16,3 +16,7 @@
   margin: 0;
   margin-bottom: 64px;
 }
+
+.adventages__item {
+  display: flex;
+}
