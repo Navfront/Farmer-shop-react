@@ -1,12 +1,12 @@
-.adventages {
+import styled from "styled-components";
+
+export const StyledAdventages = styled.section`
   padding-top: 70px;
   padding-bottom: 100px;
   text-align: center;
-}
-.adventages__heading {
-  margin-bottom: 64px;
-}
-.adventages__list {
+`;
+
+export const AdventagesList = styled.ul`
   list-style: none;
   padding-left: 0;
   text-align: left;
@@ -15,8 +15,8 @@
   gap: 20px;
   margin: 0;
   margin-bottom: 64px;
-}
+`;
 
-.adventages__item {
+export const AdventagesItem = styled.li`
   display: flex;
-}
+`;

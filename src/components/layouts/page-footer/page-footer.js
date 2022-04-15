@@ -1,16 +1,18 @@
 import React from "react";
 import Logo from "../../ui/logo/logo";
-import StyledPageFooter from "./styled";
-import LayoutWrapper from "../container/layout-wrapper.js";
+import { StyledPageFooter, PageFooterLayout } from "./styled";
 import Copyright from "../../ui/copyright/copyright";
+import Container from "../container/container";
 
 const PageFooter = () => {
   return (
     <StyledPageFooter>
-      <LayoutWrapper isFooter="true">
-        <Logo src="./images/icons/Logo.svg">Фермерские продукты</Logo>
-        <Copyright>Создано 2022 by Navfront</Copyright>
-      </LayoutWrapper>
+      <Container>
+        <PageFooterLayout>
+          <Logo>Фермерские продукты</Logo>
+          <Copyright>Создано 2022 by Navfront</Copyright>
+        </PageFooterLayout>
+      </Container>
     </StyledPageFooter>
   );
 };

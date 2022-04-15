@@ -4,7 +4,7 @@ import Adventages from "../../blocks/adventages/adventages";
 
 const PageMain = () => {
   return (
-    <main className="page__main page-main">
+    <main>
       <About />
       <Adventages />
     </main>

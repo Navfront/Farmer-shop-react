@@ -3,28 +3,27 @@ import AdventageCard from "../../ui/adventage-card/adventage-card";
 import Button from "../../ui/button/button";
 import Heading from "../../ui/heading/heading";
 import contentData from "../../../mocks/mock";
-import "./style.css";
+import Container from "../../layouts/container/container";
+import { StyledAdventages, AdventagesList, AdventagesItem } from "./styled";
 
 const Adventages = () => {
   if (contentData && contentData.length) {
     return (
-      <section className="adventages">
-        <div className="container">
-          <Heading className="adventages__heading" level="2">
-            Почему фермерские продукты лучше?
-          </Heading>
-          <ul className="adventages__list">
+      <StyledAdventages>
+        <Container>
+          <Heading as="h2">Почему фермерские продукты лучше?</Heading>
+          <AdventagesList>
             {contentData.map((data) => {
               return (
-                <li className="adventages__item">
+                <AdventagesItem>
                   <AdventageCard contentData={data} key={data.ID} />
-                </li>
+                </AdventagesItem>
               );
             })}
-          </ul>
+          </AdventagesList>
           <Button>Купить</Button>
-        </div>
-      </section>
+        </Container>
+      </StyledAdventages>
     );
   } else {
     return null;
