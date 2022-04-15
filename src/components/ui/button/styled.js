@@ -8,7 +8,7 @@ const StyledButton = styled(DefaultButton)`
   width: 260px;
   color: ${({ theme }) => theme.colors.white};
   background-color: ${({ theme }) => theme.colors.buttonPrimary};
-  font-weight: inherit;
+  font-weight: bold;
   font-size: inherit;
   font-family: inherit;
 

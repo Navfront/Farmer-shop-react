@@ -3,7 +3,10 @@ import styled from "styled-components";
 export const StyledAdventages = styled.section`
   padding-top: 70px;
   padding-bottom: 100px;
-  text-align: center;
+
+  button {
+    margin: 0 auto;
+  }
 `;
 
 export const AdventagesList = styled.ul`
