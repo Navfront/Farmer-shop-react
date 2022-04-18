@@ -13,6 +13,7 @@ export const defaultTheme = {
     pink: "#F8DDD7",
     buttonPrimary: "#FC9B27",
     buttonPrimaryHover: "#FC7427",
+    inputDefault: "#F7F7F7",
   },
   fontFamily: '"Inter", "Arial", sans-serif',
   fontWeigth: 400,
