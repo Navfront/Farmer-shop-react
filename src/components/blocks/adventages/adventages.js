@@ -11,7 +11,9 @@ const Adventages = () => {
     return (
       <StyledAdventages>
         <Container>
-          <Heading as="h2">Почему фермерские продукты лучше?</Heading>
+          <Heading as="h2" align="center">
+            Почему фермерские продукты лучше?
+          </Heading>
           <AdventagesList>
             {contentData.map((data) => {
               return (

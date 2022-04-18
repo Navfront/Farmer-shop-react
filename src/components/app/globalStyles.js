@@ -4,9 +4,15 @@ const GlobalStyles = createGlobalStyle`
 
 html, body {
     margin: 0;
+    height: 100%;
+}
+
+#root{
+  display: contents;
 }
 
 body{
+
 font-family: ${({ theme }) => theme.fontFamily};
 font-weight: ${({ theme }) => theme.fontWeigth};
 font-size: ${({ theme }) => theme.fontSize};;

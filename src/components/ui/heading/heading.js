@@ -2,7 +2,7 @@ import React from "react";
 import { defaultTheme } from "../../../themes/defaultTheme";
 import { DefaultHeading } from "../../styled";
 
-const Heading = ({ children, as }) => {
+const Heading = ({ children, as, align }) => {
   const HeadingFontSize = {
     h1: defaultTheme.title.h1FontSize,
     h2: defaultTheme.title.h2FontSize,
@@ -13,7 +13,7 @@ const Heading = ({ children, as }) => {
   };
 
   return (
-    <DefaultHeading as={as} fontSize={HeadingFontSize[as]}>
+    <DefaultHeading as={as} fontSize={HeadingFontSize[as]} align={align}>
       {children}
     </DefaultHeading>
   );
