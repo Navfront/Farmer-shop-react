@@ -3,12 +3,23 @@ const CheckBox = ({
   name = "",
   value = "",
   children,
-
+  onChange,
+  onClick,
   disabled,
+  checked,
 }) => {
   return (
     <>
-      <input id={id} type="checkbox" value={value} name={name} disabled={disabled} />
+      <input
+        id={id}
+        type="checkbox"
+        value={value}
+        name={name}
+        disabled={disabled}
+        onChange={onChange}
+        onClick={onClick}
+        checked={checked}
+      />
       <label htmlFor={id}>{children}</label>
     </>
   );
