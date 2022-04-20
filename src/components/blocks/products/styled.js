@@ -15,17 +15,15 @@ export const StyledForm = styled.form`
 
 export const InfoSliderList = styled.ul`
   grid-column: 2;
-  background-color: lightcyan; //123
+
   display: grid;
-  grid-template-rows: 1fr;
+  gap: 20px;
   list-style: none;
   padding: 0;
   margin: 0;
+  align-self: flex-start;
 `;
 
 export const InfoSlide = styled.li`
-  box-sizing: border-box;
-  padding: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  height: 288px;
+  padding: 0;
 `;

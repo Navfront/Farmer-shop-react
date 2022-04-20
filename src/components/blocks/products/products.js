@@ -4,6 +4,7 @@ import Button from "../../ui/button/button";
 import CheckBox from "../../ui/checkbox/checkbox";
 import FormBlock from "../../ui/form-block/form-block";
 import Heading from "../../ui/heading/heading";
+import ProductCard from "../../ui/product-card/product-card";
 import { InfoSlide, InfoSliderList, StyledForm, StyledProducts } from "./styled";
 
 const AUTO_CHECK_FROM = 0;
@@ -23,6 +24,7 @@ const Products = () => {
 
   const setPrice = () => {
     let summ = 0;
+
     productData.forEach((item, index) => {
       if (productsCheckedArray[index]) {
         summ += item.price;
@@ -77,7 +79,13 @@ const Products = () => {
         </FormBlock>
       </StyledForm>
       <InfoSliderList>
-        <InfoSlide />
+        {productData.map((item, index) => {
+          return (
+            <InfoSlide key={index}>
+              <ProductCard productData={item}></ProductCard>
+            </InfoSlide>
+          );
+        })}
       </InfoSliderList>
     </StyledProducts>
   );

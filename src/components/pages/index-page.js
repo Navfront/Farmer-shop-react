@@ -5,7 +5,7 @@ import PageWrapper from "../layouts/page-wrapper/pageWrapper";
 
 const IndexPage = () => {
   return (
-    <PageWrapper>
+    <PageWrapper index="true">
       <PageHeader />
       <PageMain />
       <PageFooter />

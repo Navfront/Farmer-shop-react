@@ -6,7 +6,7 @@ import PageWrapper from "../layouts/page-wrapper/pageWrapper";
 
 const ProductPage = () => {
   return (
-    <PageWrapper style={{ backgroundColor: "#F6F6F6" }}>
+    <PageWrapper>
       <PageHeader />
       <Container>
         <Products />

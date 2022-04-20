@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import StyledButton from "./styled";
 
 const Button = ({ children }) => {
