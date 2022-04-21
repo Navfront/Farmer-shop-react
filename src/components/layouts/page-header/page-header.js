@@ -4,13 +4,13 @@ import Logo from "../../ui/logo/logo";
 import Container from "../container/container";
 import { PageHeaderLayout, StyledPageHeader } from "./styled";
 
-const PageHeader = () => {
+const PageHeader = ({ buyButton }) => {
   return (
     <StyledPageHeader>
       <Container>
         <PageHeaderLayout>
           <Logo>Фермерские продукты</Logo>
-          <Button>Купить</Button>
+          {buyButton && <Button>Купить</Button>}
         </PageHeaderLayout>
       </Container>
     </StyledPageHeader>

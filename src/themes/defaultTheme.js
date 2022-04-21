@@ -18,7 +18,7 @@ export const defaultTheme = {
   fontFamily: '"Inter", "Arial", sans-serif',
   fontWeigth: 400,
   fontSize: "18px",
-  pageWidth: "1100px",
+  pageWidth: 1100,
   pagePaddings: "0 15px",
 
   title: {

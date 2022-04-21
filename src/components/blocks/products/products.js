@@ -1,20 +1,27 @@
 import { useEffect, useState } from "react";
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+
 import productData from "../../../mocks/products";
 import Button from "../../ui/button/button";
 import CheckBox from "../../ui/checkbox/checkbox";
 import FormBlock from "../../ui/form-block/form-block";
 import Heading from "../../ui/heading/heading";
 import ProductCard from "../../ui/product-card/product-card";
-import { InfoSlide, InfoSliderList, StyledForm, StyledProducts } from "./styled";
+import { InfoSliderLayout, ProductsPrice, StyledForm, StyledProducts } from "./styled";
 
 const AUTO_CHECK_FROM = 0;
 const AUTO_CHECK_TO = 3;
 
 const Products = () => {
   const [priceCounter, setPriceCounter] = useState(0);
+  const [adressInputValue, setAdressInputValue] = useState("");
   const [productsCheckedArray, setProductsCheckedArray] = useState(
     new Array(productData.length).fill(false).fill(true, AUTO_CHECK_FROM, AUTO_CHECK_TO)
   );
+  const [swiper, setSwiper] = useState();
 
   const getNewCheckedArray = (array, indexOfCheck) => {
     const newArray = array.slice();
@@ -61,8 +68,9 @@ const Products = () => {
                 key={item.id}
                 checked={productsCheckedArray[index]}
                 value={item.productName}
-                onChange={() => {
+                onChange={(evt) => {
                   setProductsCheckedArray(getNewCheckedArray(productsCheckedArray, index));
+                  evt.target.checked && swiper.slideTo(index);
                 }}
               >
                 {item.productTitle}
@@ -72,21 +80,45 @@ const Products = () => {
         </FormBlock>
         <FormBlock>
           <Heading as="h3">Сделать заказ</Heading>
-          <span>Цена</span>
-          <p>{priceCounter}</p>
-          <input type="text" name="adress" placeholder="Введите адрес доставки"></input>
-          <Button>Купить</Button>
+          <input
+            type="text"
+            name="adress"
+            value={adressInputValue}
+            onChange={(evt) => {
+              setAdressInputValue(evt.target.value);
+            }}
+            placeholder="Введите адрес доставки"
+          ></input>
+          <ProductsPrice>
+            <span>Цена</span>
+            {priceCounter} руб.
+          </ProductsPrice>
+
+          <Button width={"100%"} disabled={adressInputValue && priceCounter > 0 ? false : true}>
+            Купить
+          </Button>
         </FormBlock>
       </StyledForm>
-      <InfoSliderList>
-        {productData.map((item, index) => {
-          return (
-            <InfoSlide key={index}>
-              <ProductCard productData={item}></ProductCard>
-            </InfoSlide>
-          );
-        })}
-      </InfoSliderList>
+      <InfoSliderLayout>
+        <Swiper
+          direction="vertical"
+          autoHeight="true"
+          spaceBetween={20}
+          slidesPerView={2.5}
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => {
+            setSwiper(swiper);
+          }}
+        >
+          {productData.map((item, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <ProductCard productData={item}></ProductCard>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </InfoSliderLayout>
     </StyledProducts>
   );
 };

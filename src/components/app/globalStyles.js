@@ -5,6 +5,7 @@ const GlobalStyles = createGlobalStyle`
 html, body {
     margin: 0;
     height: 100%;
+   
 }
 
 #root{
@@ -12,7 +13,7 @@ html, body {
 }
 
 body{
-
+min-width:${({ theme }) => theme.pageWidth + 30 + "px"};
 font-family: ${({ theme }) => theme.fontFamily};
 font-weight: ${({ theme }) => theme.fontWeigth};
 font-size: ${({ theme }) => theme.fontSize};;

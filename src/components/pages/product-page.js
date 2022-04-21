@@ -8,9 +8,11 @@ const ProductPage = () => {
   return (
     <PageWrapper>
       <PageHeader />
-      <Container>
-        <Products />
-      </Container>
+      <main>
+        <Container>
+          <Products />
+        </Container>
+      </main>
       <PageFooter />
     </PageWrapper>
   );
