@@ -4,6 +4,7 @@ export const StyledPageFooter = styled.footer`
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   grid-row: -1;
   background-color: white;
+  margin-top: auto;
 `;
 
 export const PageFooterLayout = styled.div`

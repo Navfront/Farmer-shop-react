@@ -1,14 +1,8 @@
 import React from "react";
-import About from "../../blocks/about/about";
-import Adventages from "../../blocks/adventages/adventages";
+import { Main } from "../../styled/index";
 
-const PageMain = () => {
-  return (
-    <main>
-      <About />
-      <Adventages />
-    </main>
-  );
+const PageMain = ({ children }) => {
+  return <Main>{children}</Main>;
 };
 
 export default PageMain;

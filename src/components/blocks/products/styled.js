@@ -5,14 +5,17 @@ export const StyledProducts = styled.section`
   display: grid;
   gap: 20px;
   grid-template-columns: 353px auto;
-  overflow: hidden;
+
+  & .swiper-slide {
+    height: auto !important;
+  }
 `;
 
 export const StyledForm = styled.form`
   * + * {
     margin-top: 20px;
   }
-  *:last-child {
+  button {
     margin-bottom: 40px;
   }
 `;
@@ -22,10 +25,6 @@ export const InfoSliderLayout = styled.div`
   grid-column: 2;
   overflow: hidden;
   height: ${({ height }) => (height ? height + "px" : "auto")};
-`;
-
-export const InfoSlide = styled.li`
-  padding: 0;
 `;
 
 export const ProductsPrice = styled.p`

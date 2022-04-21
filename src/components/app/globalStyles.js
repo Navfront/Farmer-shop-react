@@ -16,7 +16,7 @@ body{
 min-width:${({ theme }) => theme.pageWidth + 30 + "px"};
 font-family: ${({ theme }) => theme.fontFamily};
 font-weight: ${({ theme }) => theme.fontWeigth};
-font-size: ${({ theme }) => theme.fontSize};;
+font-size: ${({ theme }) => theme.fontSize};
 }
 
 img {
