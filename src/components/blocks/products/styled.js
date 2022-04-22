@@ -6,6 +6,10 @@ export const StyledProducts = styled.section`
   gap: 20px;
   grid-template-columns: 353px auto;
 
+  & .swiper {
+    flex: 1;
+  }
+
   & .swiper-slide {
     height: auto !important;
   }

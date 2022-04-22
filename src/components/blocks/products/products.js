@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Mousewheel, Scrollbar } from "swiper";
@@ -15,21 +15,23 @@ import { InfoSliderLayout, ProductsPrice, StyledForm, StyledProducts } from "./s
 const AUTO_CHECK_FROM = 0;
 const AUTO_CHECK_TO = 3;
 
-const getNewChecksArray = () => {
+const getInitChecksArray = () => {
   return new Array(productData.length).fill(false).fill(true, AUTO_CHECK_FROM, AUTO_CHECK_TO);
 };
+
+const getNewCheckedArray = (array, indexOfCheck) => {
+  const newArray = array.slice();
+  newArray[indexOfCheck] = !newArray[indexOfCheck];
+  return newArray;
+};
+
+SwiperCore.use([Mousewheel]);
 
 const Products = () => {
   const [priceCounter, setPriceCounter] = useState(0);
   const [adressInputValue, setAdressInputValue] = useState("");
-  const [productsCheckedArray, setProductsCheckedArray] = useState(getNewChecksArray());
+  const [productsCheckedArray, setProductsCheckedArray] = useState(getInitChecksArray());
   const [swiper, setSwiper] = useState();
-
-  const getNewCheckedArray = (array, indexOfCheck) => {
-    const newArray = array.slice();
-    newArray[indexOfCheck] = !newArray[indexOfCheck];
-    return newArray;
-  };
 
   const setPrice = () => {
     let summ = 0;
@@ -56,16 +58,14 @@ const Products = () => {
     );
     evt.target.reset();
     setAdressInputValue("");
-    setProductsCheckedArray(getNewChecksArray());
+    setProductsCheckedArray(getInitChecksArray());
   };
 
   useEffect(() => {
     setPrice();
   }, [productsCheckedArray]);
 
-  SwiperCore.use([Mousewheel]);
-
-  return (
+  return productData && productData.length ? (
     <StyledProducts>
       <StyledForm action="#" method="get" onSubmit={handlerOrderSubmit}>
         <FormBlock>
@@ -133,6 +133,8 @@ const Products = () => {
         </Swiper>
       </InfoSliderLayout>
     </StyledProducts>
+  ) : (
+    <Heading as={"h2"}>Продукты были слишком вкусные и их разобрали.</Heading>
   );
 };
 

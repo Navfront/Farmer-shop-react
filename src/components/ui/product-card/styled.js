@@ -7,6 +7,7 @@ export const ProductCardWrapper = styled.article`
   grid-template-columns: 248px 1fr;
   padding: 20px;
   gap: 20px;
+  height: 288px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: grab;
 

@@ -11,20 +11,13 @@ import {
   ProductCardCharacteristics,
 } from "./styled";
 
+const tabNames = ["Описание", "Характеристики", "Свойства"];
+
 const ProductCard = ({ productData }) => {
   const [choosenTab, setChoosenTab] = useState(0);
 
-  const tabNames = ["Описание", "Характеристики", "Свойства"];
-  const characteristicsNames = {
-    fullAmount: "Масса:",
-    expiration: "Срок годности:",
-    race: "Порода",
-    from: "Место происхождения:",
-  };
-  const propertiesNames = {
-    energy: "Энергетическая ценность:",
-    foodValue: "Пищевая ценность:",
-  };
+  const characteristicsData = productData.content.characteristics;
+  const propertiesData = productData.content.properties;
 
   return (
     <ProductCardWrapper>
@@ -59,34 +52,28 @@ const ProductCard = ({ productData }) => {
 
         <ProductCardCharacteristics isShow={tabNames.indexOf("Характеристики") === choosenTab}>
           <dl>
-            <p>
-              <dt> {productData.content.characteristics.fullAmount ? characteristicsNames.fullAmount + " " : null}</dt>
-              <dd> {productData.content.characteristics.fullAmount}</dd>
-            </p>
-            <p>
-              <dt> {productData.content.characteristics.expiration ? characteristicsNames.expiration + " " : null}</dt>
-              <dd> {productData.content.characteristics.expiration}</dd>
-            </p>
-            <p>
-              <dt> {productData.content.characteristics.race ? characteristicsNames.race + " " : null}</dt>
-              <dd> {productData.content.characteristics.race}</dd>
-            </p>
-            <p>
-              <dt> {productData.content.characteristics.from ? characteristicsNames.from + " " : null}</dt>
-              <dd> {productData.content.characteristics.from}</dd>
-            </p>
+            {characteristicsData &&
+              Object.keys(characteristicsData).map((item, index) => {
+                return (
+                  <p key={index}>
+                    <dt>{item} </dt>
+                    <dd>{characteristicsData[item]}</dd>
+                  </p>
+                );
+              })}
           </dl>
         </ProductCardCharacteristics>
         <ProductCardCharacteristics isShow={tabNames.indexOf("Свойства") === choosenTab}>
           <dl>
-            <p>
-              <dt> {productData.content.properties.energy ? propertiesNames.energy : null}</dt>
-              <dd> {productData.content.properties.energy}</dd>
-            </p>
-            <p>
-              <dt> {productData.content.properties.foodValue ? propertiesNames.foodValue : null}</dt>
-              <dd> {productData.content.properties.foodValue}</dd>
-            </p>
+            {propertiesData &&
+              Object.keys(propertiesData).map((item, index) => {
+                return (
+                  <p key={index}>
+                    <dt>{item} </dt>
+                    <dd>{propertiesData[item]}</dd>
+                  </p>
+                );
+              })}
           </dl>
         </ProductCardCharacteristics>
       </ProductCardInfo>
