@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Mousewheel, Scrollbar } from "swiper";
@@ -15,12 +15,14 @@ import { InfoSliderLayout, ProductsPrice, StyledForm, StyledProducts } from "./s
 const AUTO_CHECK_FROM = 0;
 const AUTO_CHECK_TO = 3;
 
+const getNewChecksArray = () => {
+  return new Array(productData.length).fill(false).fill(true, AUTO_CHECK_FROM, AUTO_CHECK_TO);
+};
+
 const Products = () => {
   const [priceCounter, setPriceCounter] = useState(0);
   const [adressInputValue, setAdressInputValue] = useState("");
-  const [productsCheckedArray, setProductsCheckedArray] = useState(
-    new Array(productData.length).fill(false).fill(true, AUTO_CHECK_FROM, AUTO_CHECK_TO)
-  );
+  const [productsCheckedArray, setProductsCheckedArray] = useState(getNewChecksArray());
   const [swiper, setSwiper] = useState();
 
   const getNewCheckedArray = (array, indexOfCheck) => {
@@ -40,6 +42,23 @@ const Products = () => {
     setPriceCounter(summ);
   };
 
+  const handlerOrderSubmit = (evt) => {
+    evt.preventDefault();
+    const data = new FormData(evt.currentTarget);
+    const orderedProducts = [];
+    productsCheckedArray.forEach((productIsBuy, index) => {
+      productIsBuy && orderedProducts.push(productData[index].productTitle);
+    });
+    alert(
+      `Вы купили:\n${orderedProducts.join(
+        ",\n"
+      )}.\n\nНа сумму: ${priceCounter}р.\n\nЗаказ доствим по адрессу:\n${data.get("adress")}`
+    );
+    evt.target.reset();
+    setAdressInputValue("");
+    setProductsCheckedArray(getNewChecksArray());
+  };
+
   useEffect(() => {
     setPrice();
   }, [productsCheckedArray]);
@@ -48,19 +67,7 @@ const Products = () => {
 
   return (
     <StyledProducts>
-      <StyledForm
-        action="#"
-        method="get"
-        onSubmit={(evt) => {
-          evt.preventDefault();
-          const data = new FormData(evt.currentTarget);
-          const orderedProducts = [];
-          data.forEach((el) => orderedProducts.push(el));
-          alert(
-            `Вы успешно сделали заказ на сумму: ${priceCounter}р. Продукты ${orderedProducts}. Заказ доствим по адрессу:`
-          );
-        }}
-      >
+      <StyledForm action="#" method="get" onSubmit={handlerOrderSubmit}>
         <FormBlock>
           <Heading as="h3">Выберите продукты</Heading>
           {productData.map((item, index) => {
