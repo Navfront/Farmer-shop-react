@@ -8,6 +8,7 @@ export const ProductCardWrapper = styled.article`
   padding: 20px;
   gap: 20px;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: grab;
 
   h2 {
     margin: 0;
@@ -16,6 +17,14 @@ export const ProductCardWrapper = styled.article`
     line-height: 130%;
     color: #333333;
     margin-bottom: 16px;
+  }
+  ul {
+    margin: 0;
+    margin-bottom: 16px;
+  }
+  p {
+    margin: 0;
+    margin-bottom: 14px;
   }
 `;
 

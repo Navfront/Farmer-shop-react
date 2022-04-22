@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
+import SwiperCore, { Mousewheel, Scrollbar } from "swiper";
+import "swiper/css/scrollbar";
 
 import productData from "../../../mocks/products";
 import Button from "../../ui/button/button";
@@ -43,6 +43,8 @@ const Products = () => {
   useEffect(() => {
     setPrice();
   }, [productsCheckedArray]);
+
+  SwiperCore.use([Mousewheel]);
 
   return (
     <StyledProducts>
@@ -99,13 +101,17 @@ const Products = () => {
           </Button>
         </FormBlock>
       </StyledForm>
-      <InfoSliderLayout>
+      <InfoSliderLayout style={{ position: "relative" }}>
         <Swiper
+          modules={[Scrollbar]}
+          scrollbar={{
+            hide: true,
+          }}
+          mousewheel
           direction="vertical"
           autoHeight="true"
           spaceBetween={20}
           slidesPerView={2.5}
-          onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => {
             setSwiper(swiper);
           }}

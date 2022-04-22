@@ -23,8 +23,10 @@ export const StyledForm = styled.form`
 export const InfoSliderLayout = styled.div`
   display: flex;
   grid-column: 2;
-  overflow: hidden;
-  height: ${({ height }) => (height ? height + "px" : "auto")};
+
+  & .swiper-scrollbar {
+    right: -15px;
+  }
 `;
 
 export const ProductsPrice = styled.p`
