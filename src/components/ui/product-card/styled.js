@@ -25,7 +25,10 @@ export const ProductCardWrapper = styled.article`
   }
   p {
     margin: 0;
-    margin-bottom: 14px;
+  }
+
+  p + p {
+    margin-top: 8px;
   }
 `;
 
