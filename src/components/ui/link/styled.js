@@ -9,12 +9,4 @@ export const StyledLink = styled(Link)`
   color: ${({ theme }) => theme.colors.dark};
   font-weight: 700;
   transition: ease 0.1s;
-
-  &:hover,
-  &:focus {
-    opacity: 0.8;
-  }
-  &:active {
-    opacity: 0.6;
-  }
 `;
