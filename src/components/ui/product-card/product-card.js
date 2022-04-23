@@ -27,7 +27,7 @@ const ProductCard = ({ productData }) => {
         <ProductCardTabsList>
           {tabNames.map((tabName, index) => {
             return (
-              <li key={index}>
+              <li key={tabName + index + Math.random() * 1000}>
                 <ProductCardTabButton
                   current={index === choosenTab && true}
                   onClick={() => {

@@ -33,17 +33,6 @@ const Products = () => {
   const [productsCheckedArray, setProductsCheckedArray] = useState(getInitChecksArray());
   const [swiper, setSwiper] = useState();
 
-  const setPrice = () => {
-    let summ = 0;
-
-    productData.forEach((item, index) => {
-      if (productsCheckedArray[index]) {
-        summ += item.price;
-      }
-    });
-    setPriceCounter(summ);
-  };
-
   const handlerOrderSubmit = (evt) => {
     evt.preventDefault();
     const data = new FormData(evt.currentTarget);
@@ -61,8 +50,20 @@ const Products = () => {
     setProductsCheckedArray(getInitChecksArray());
   };
 
+  const calcPrice = () => {
+    let summ = 0;
+    productData.forEach((item, index) => {
+      if (productsCheckedArray[index]) {
+        summ += item.price;
+      }
+    });
+
+    return summ;
+  };
+
   useEffect(() => {
-    setPrice();
+    let newPrice = calcPrice();
+    setPriceCounter(newPrice);
   }, [productsCheckedArray]);
 
   return productData && productData.length ? (
@@ -74,7 +75,7 @@ const Products = () => {
             return (
               <CheckBox
                 name="products[]"
-                key={item.id}
+                key={"checkbox" + item.id}
                 checked={productsCheckedArray[index]}
                 value={item.productName}
                 onChange={(evt) => {
@@ -125,7 +126,7 @@ const Products = () => {
         >
           {productData.map((item, index) => {
             return (
-              <SwiperSlide key={index}>
+              <SwiperSlide key={"slide" + index}>
                 <ProductCard productData={item}></ProductCard>
               </SwiperSlide>
             );
