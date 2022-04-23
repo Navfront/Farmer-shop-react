@@ -1,9 +1,11 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { DefaultButton } from "../../styled/index";
+import { Link } from "react-router-dom";
 
-const StyledButton = styled(DefaultButton)`
-  box-sizing: border-box;
-  border: none;
+const buttonCss = css`
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
   padding: 16.5px 24px;
   width: ${({ width }) => {
     return width ? width : "260px";
@@ -13,6 +15,7 @@ const StyledButton = styled(DefaultButton)`
   font-weight: bold;
   font-size: inherit;
   font-family: inherit;
+  box-sizing: border-box;
 
   &[disabled] {
     cursor: default;
@@ -29,6 +32,15 @@ const StyledButton = styled(DefaultButton)`
   &:not(&[disabled]):active {
     background-color: ${({ theme }) => theme.colors.buttonPrimaryHover};
   }
+`;
+
+export const StyledLink = styled(Link)`
+  ${buttonCss}
+`;
+
+const StyledButton = styled(DefaultButton)`
+  border: none;
+  ${buttonCss}
 `;
 
 export default StyledButton;

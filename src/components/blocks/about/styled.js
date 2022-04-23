@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledAbout = styled.section`
-  background-color: ${({ theme }) => theme.colors.blue};
+  background-color: ${({ theme }) => theme.colors.lightBlue};
 `;
 
 export const AboutWrapper = styled.div`

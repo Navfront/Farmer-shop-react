@@ -15,15 +15,15 @@ const Adventages = () => {
             Почему фермерские продукты лучше?
           </Heading>
           <AdventagesList>
-            {contentData.map((data) => {
+            {contentData.map((data, index) => {
               return (
-                <AdventagesItem>
+                <AdventagesItem key={index}>
                   <AdventageCard contentData={data} key={data.ID} />
                 </AdventagesItem>
               );
             })}
           </AdventagesList>
-          <Button>Купить</Button>
+          <Button to="/order">Купить</Button>
         </Container>
       </StyledAdventages>
     );

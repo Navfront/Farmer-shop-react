@@ -7,6 +7,9 @@ export const StyledAdventages = styled.section`
   button {
     margin: 0 auto;
   }
+  a {
+    margin: 0 auto;
+  }
 `;
 
 export const AdventagesList = styled.ul`
