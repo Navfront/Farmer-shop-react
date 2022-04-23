@@ -34,6 +34,11 @@ export const ProductCardWrapper = styled.article`
     margin-top: 8px;
   }
 `;
+export const DesctiprionWrapper = styled.div`
+  height: 110px;
+  overflow-y: auto;
+  padding-right: 3px;
+`;
 
 export const ProductCardImage = styled.img`
   width: 248px;

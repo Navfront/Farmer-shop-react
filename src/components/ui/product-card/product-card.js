@@ -9,6 +9,7 @@ import {
   ProductCardPriceWrapper,
   ProductCardInfo,
   ProductCardCharacteristics,
+  DesctiprionWrapper,
 } from "./styled";
 
 const tabNames = ["Описание", "Характеристики", "Свойства"];
@@ -42,7 +43,9 @@ const ProductCard = ({ productData }) => {
         </ProductCardTabsList>
 
         <ProductCardDescription isShow={tabNames.indexOf("Описание") === choosenTab}>
-          <p> {productData.content.description}</p>
+          <DesctiprionWrapper>
+            <p> {productData.content.description}</p>
+          </DesctiprionWrapper>
           <ProductCardPriceWrapper>
             <span>
               {productData.price ? productData.price : 0} руб. / {productData.amount ? productData.amount : 0} гр.
