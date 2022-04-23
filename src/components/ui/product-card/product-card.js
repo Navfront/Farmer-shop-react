@@ -50,7 +50,10 @@ const ProductCard = ({ productData }) => {
           </ProductCardPriceWrapper>
         </ProductCardDescription>
 
-        <ProductCardCharacteristics isShow={tabNames.indexOf("Характеристики") === choosenTab}>
+        <ProductCardCharacteristics
+          isScroll={characteristicsData.length > 5}
+          isShow={tabNames.indexOf("Характеристики") === choosenTab}
+        >
           <dl>
             {characteristicsData &&
               Object.keys(characteristicsData).map((item, index) => {
@@ -63,7 +66,10 @@ const ProductCard = ({ productData }) => {
               })}
           </dl>
         </ProductCardCharacteristics>
-        <ProductCardCharacteristics isShow={tabNames.indexOf("Свойства") === choosenTab}>
+        <ProductCardCharacteristics
+          isScroll={characteristicsData.length > 5}
+          isShow={tabNames.indexOf("Свойства") === choosenTab}
+        >
           <dl>
             {propertiesData &&
               Object.keys(propertiesData).map((item, index) => {

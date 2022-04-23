@@ -23,6 +23,9 @@ export const ProductCardWrapper = styled.article`
     margin: 0;
     margin-bottom: 16px;
   }
+  dl {
+    margin: 0;
+  }
   p {
     margin: 0;
   }
@@ -89,6 +92,8 @@ export const ProductCardDescription = styled.div`
 
 export const ProductCardCharacteristics = styled.div`
   display: ${(props) => (props.isShow ? "block" : "none")};
+  overflow-y: ${({ isScroll }) => (isScroll ? "scroll" : "auto")};
+  height: 145px;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
