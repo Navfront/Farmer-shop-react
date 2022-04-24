@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Мое первое React SPA учебного проекта Farmers Shop от HtmlAcademy.
+# Ссылка на Netlify: 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# https://62651dfc302aa10c88a24e89--resilient-lebkuchen-0ffc61.netlify.app/
 
-## Available Scripts
+# Техническое задание:
 
-In the project directory, you can run:
+- Приложение должно быть реализована как SPA - переходы между страницами должны происходить без перезагрузуки.
+- Все макеты нужно верстать фиксированно, без адаптива.
+- Сайт нужно верстать только под обычные экраны без ретины.
+- Сайт должен корректно работать и отображаться во всех последних версиях популярных браузеров.
+- Все данные полученная не от пользователя, а из моковых данных, считаются безопасной и не требует проверок на безопасноть (XSS и другие атаки).
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Шапка:
+Шапка сайта состоит из логотипа и навигации. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Навигация содержит ссылки на страницы сайта позволяя переходить по ресурсу.
 
-### `npm test`
+Логотип является ссылкой на главную страницу.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Главная страница:
+Главная страница не содержит интерактива, её нужно просто сверстать по макетам.
 
-### `npm run build`
+Блок с преимуществами фермерских продуктов и не достатками магазинных, должен отрисовываться на основе данных. (в реальном
+приложении такие данные приходят с сервера, а у вас они будут храниться в файле). Возможны ситуации, при которых, список
+преимуществ окажется пустым, в таких случаях нужно скрыть блок преимуществ от пользователя.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Страница оформления заказа:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Располагается по url "/order".
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+При выборе продукта в блоке "Выберите продукт", блок с детальным описанием продуктов должен автоматически скролится к 
+выбранному продукту, что бы показать его описание. Цена так же должна пересчитаться, с учётом выбранного продукта.
 
-### `npm run eject`
+При снятии галочки с выбранного продукта, блок с детальным описанием продуктов автоматически скролится не должен, а цена
+должна быть пересчитана с учётом удалённого из корзины продукта.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Так же пользователь должен иметь возможность самостоятельно скролить блок с карточками детального описания товаров.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Карточки товаров с детальным описанием продуктов должны содержать табы, при клике по заголовкам которым, отображается соотвествующая
+информация о продукте. Информация отображается в соответствии с макетами.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Адрес доставки не валидируется, это просто текстовое поле, куда пользователь может вводить любой текст.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Если поле ввода адреса пустое, или не выбран ни один продукт, то кнопка купить должна быть задисейблена
 
-## Learn More
+Клик по кнопки "Купить" выводит в alert сообщение с описанием заказа.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Список продуктов должен отрисовываться на основе данных. (в реальном
+приложении такие данные приходят с сервера, а у вас они будут храниться в файле). Возможны ситуации, при которых, список
+продуктов окажется пустым, в таких вместо формы офомрления заказа, нужно выводить сообщение 
+"Продукты были слишком вкусные и их разобрали.",
+дизайн сообщения остаётся на усмотрение разработчика.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Подвал:
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Состоит из логотипа и копирайта. Логотип является ссылкой на главную страницу.
